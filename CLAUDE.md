@@ -32,6 +32,161 @@ a2a-samples/
 - **Hosts**: A2A clients that connect to and orchestrate one or more agents
 - **Extensions**: Protocol extensions that augment base A2A types (e.g., timestamps, traceability)
 
+## Samples by Difficulty Level
+
+### Beginner - Getting Started
+
+**Python Agents:**
+- `helloworld` - Minimal agent returning simple messages (LangGraph)
+- `number_guessing_game` - Three-agent game without LLM (pure A2A SDK)
+- `dice_agent_rest` / `dice_agent_grpc` - Simple dice rolling (ADK, different transports)
+- `a2a-mcp-without-framework` - Raw A2A SDK usage without frameworks
+- `adk_facts` - Simple fact generation (ADK intro)
+- `travel_planner_agent` - Basic LLM integration (LangChain)
+
+**Python Hosts:**
+- `cli` - Command-line client with streaming support
+- `beeai-chat` - Simple console chat using BeeAI Framework
+- `multiagent` - Minimal ADK-based foundation
+
+**.NET:**
+- `BasicA2ADemo` - Echo and calculator agents demonstrating core A2A patterns
+
+### Intermediate - Feature-Rich Single Agents
+
+**Python Agents:**
+- `langgraph` - Currency exchange with streaming, multi-turn, webhooks (LangGraph)
+- `crewai` - Text-to-image generation with caching (CrewAI)
+- `llama_index_file_chat` - File upload, parsing, QA with citations (LlamaIndex)
+- `adk_expense_reimbursement` - Form handling and validation (ADK)
+- `semantickernel` - Plugin architecture with streaming (Semantic Kernel)
+- `marvin` - Structured data extraction with persistence (Marvin)
+- `analytics` - Chart generation from natural language (CrewAI + Matplotlib)
+- `veo_video_gen` - Video generation with GCS storage (ADK + VEO)
+- `github-agent` - GitHub API integration with function calling
+
+**Java Agents:**
+- `content_writer` - LLM-powered content generation (Quarkus + LangChain4j)
+- `content_editor` - Content polishing and refinement
+- `weather_mcp` - External API integration via MCP
+- `dice_agent_multi_transport` - Multi-transport support (gRPC + JSON-RPC)
+
+**JavaScript Agents:**
+- `movie-agent` - TMDB API integration (Genkit)
+- `coder` - Code file generation as artifacts
+- `content-editor` - Content editing in TypeScript
+
+**Go:**
+- `server` / `client` - JSON-RPC 2.0 protocol implementation with SSE
+- `models` - Type-safe data structures
+
+**.NET:**
+- `A2ACliDemo` - Secure CLI command execution with whitelisting
+- `A2ASemanticKernelDemo` - AI-powered text processing (summarization, sentiment, translation)
+
+**Python Hosts:**
+- `a2a_gui` - Web-based GUI with FastAPI and Google Cloud auth
+
+### Advanced - Multi-Agent & Enterprise
+
+**Python Agents:**
+- `ag2` - Code review with MCP tool integration (AG2 framework)
+- `any_agent_adversarial_multiagent` - Adversarial agent simulation
+- `a2a_telemetry` - OpenTelemetry + Jaeger distributed tracing
+- `a2a_mcp` - Complete travel system with dynamic agent discovery via MCP registry
+- `airbnb_planner_multiagent` - Multi-agent coordination with Gradio UI
+- `azureaifoundry_sdk` - Azure AI Foundry integration (3 examples including multi-agent with Semantic Kernel)
+- `mindsdb` - Enterprise federated data queries with natural language SQL
+- `headless_agent_auth` - Auth0 CIBA authentication flow
+
+**Java Agents:**
+- `magic_8_ball_security` - OAuth2 Keycloak authentication + multi-transport
+
+**Python Hosts:**
+- `a2a_multiagent_host` - Advanced orchestration with traceability extension
+- `content_creation` - Cross-language pipeline (Python + Java + TypeScript)
+- `weather_and_airbnb_planner` - Multi-agent with MCP + LangGraph
+
+## Samples by Feature
+
+### Streaming & Real-time
+- `langgraph`, `llama_index_file_chat`, `semantickernel`, `analytics` (Python)
+- Go `server`/`client` (SSE support)
+
+### Multi-turn Conversations
+- `langgraph`, `llama_index_file_chat`, `semantickernel`, `marvin`, `ag2`, `travel_planner_agent` (Python)
+
+### File Handling
+- `llama_index_file_chat` (upload & parsing)
+- `veo_video_gen` (GCS storage)
+- `cli` (file attachments)
+
+### Tool/Function Calling
+- `langgraph`, `ag2`, `semantickernel`, `github-agent`, `beeai-chat` (Python)
+
+### MCP (Model Context Protocol) Integration
+- `ag2` (mypy tools), `a2a_mcp` (agent registry), `airbnb_planner_multiagent`, `weather_mcp` (Java), `azureaifoundry_sdk` (Python)
+
+### Multi-Agent Orchestration
+- `a2a_mcp`, `airbnb_planner_multiagent`, `content_creation`, `weather_and_airbnb_planner`, `a2a_multiagent_host` (Python)
+- `azureaifoundry_sdk/multi_agent` (Python)
+
+### Authentication & Security
+- `magic_8_ball_security` (OAuth2 Keycloak) (Java)
+- `headless_agent_auth` (Auth0 CIBA) (Python)
+- `A2ACliDemo` (command whitelisting) (.NET)
+
+### Observability & Tracing
+- `a2a_telemetry` (Jaeger + OpenTelemetry) (Python)
+- `a2a_multiagent_host` (traceability extension) (Python)
+
+### Cross-Language Systems
+- `content_creation` (Python + Java + TypeScript orchestration)
+- `weather_and_airbnb_planner` (Python + Java)
+
+### Different Transport Protocols
+- `dice_agent_grpc` vs `dice_agent_rest` (gRPC vs REST)
+- `dice_agent_multi_transport` (unified gRPC + JSON-RPC)
+- `magic_8_ball_security` (JSON-RPC + REST + gRPC)
+
+### Web UI
+- `adk_expense_reimbursement` (forms), `airbnb_planner_multiagent` (Gradio), `content_creation` (Gradio), `weather_and_airbnb_planner` (Gradio), `a2a_gui` (FastAPI), `demo/ui` (Mesop)
+
+### Cloud Deployment
+- `adk_cloud_run` (Google Cloud Run with AlloyDB)
+- `veo_video_gen` (Vertex AI + GCS)
+- `azureaifoundry_sdk` (Azure AI Foundry)
+
+## Recommended Learning Path
+
+1. **Start Here (Beginner):**
+   - Python: `helloworld` or `number_guessing_game` → `cli` host
+   - .NET: `BasicA2ADemo`
+   - Goal: Understand basic A2A message flow
+
+2. **Learn Frameworks (Intermediate):**
+   - Python: Try `langgraph` (streaming, multi-turn) or `crewai` (image generation)
+   - Explore different frameworks: `semantickernel`, `ag2`
+   - Goal: See how different frameworks integrate with A2A
+
+3. **Add Advanced Features (Intermediate):**
+   - File handling: `llama_index_file_chat`
+   - Forms: `adk_expense_reimbursement`
+   - External APIs: `github-agent`, `weather_mcp` (Java)
+   - Goal: Build feature-rich single agents
+
+4. **Multi-Agent Systems (Advanced):**
+   - Start: `a2a_multiagent_host` (basic orchestration)
+   - MCP integration: `a2a_mcp` (agent registry)
+   - Cross-language: `content_creation` (Python + Java + TypeScript)
+   - Goal: Build coordinated multi-agent systems
+
+5. **Production Patterns (Advanced):**
+   - Security: `magic_8_ball_security`, `headless_agent_auth`
+   - Observability: `a2a_telemetry` (Jaeger tracing)
+   - Cloud deployment: `adk_cloud_run`, `azureaifoundry_sdk`
+   - Goal: Production-ready agent systems
+
 ## Python Development
 
 **Prerequisites:**
