@@ -194,28 +194,29 @@ a2a-samples/
 - [UV](https://docs.astral.sh/uv/) for dependency management
 
 **Workspace structure:**
-- Root `pyproject.toml` defines a UV workspace with members in `samples/python/agents/`, `samples/python/hosts/`, and `demo/ui`
+- Root `pyproject.toml` defines a UV workspace with members organized by difficulty level
+- Python samples are in `samples/python/agents/{beginner,intermediate,advanced}/` and `samples/python/hosts/{beginner,intermediate,advanced}/`
 - Each agent/host is a separate UV package with its own `pyproject.toml`
 
 **Running agents and hosts:**
 ```bash
 # Run an agent (starts A2A server)
-cd samples/python/agents/<agent-name>
+cd samples/python/agents/<difficulty>/<agent-name>
 uv run .
 
 # Run a host (starts A2A client)
-cd samples/python/hosts/<host-name>
+cd samples/python/hosts/<difficulty>/<host-name>
 uv run .
 ```
 
 **Example workflow:**
 ```bash
 # Terminal 1: Start an agent
-cd samples/python/agents/langgraph
+cd samples/python/agents/intermediate/langgraph
 uv run .
 
 # Terminal 2: Start the CLI host
-cd samples/python/hosts/cli
+cd samples/python/hosts/beginner/cli
 uv run .
 ```
 
