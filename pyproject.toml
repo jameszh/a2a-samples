@@ -8,21 +8,55 @@ dependencies = []
 
 [tool.uv.workspace]
 members = [
-    "samples/python/agents/crewai",
-    "samples/python/agents/adk_expense_reimbursement",
-    "samples/python/agents/marvin",
-    "samples/python/hosts/cli",
-    "samples/python/hosts/extended_agent_card_cli",
-    "samples/python/hosts/multiagent",
-    "samples/python/agents/airbnb_planner_multiagent",
-    "samples/python/agents/llama_index_file_chat",
-    "samples/python/agents/semantickernel",
-    "samples/python/agents/mindsdb",
-    "samples/python/agents/extended_agent_card_adk",
-    "samples/python/agents/veo_video_gen",
-    "samples/python/agents/dice_agent_grpc",
-    "samples/python/agents/dice_agent_rest",
-    "samples/python/agents/ag2",
+    # Beginner agents
+    "samples/python/agents/beginner/helloworld",
+    "samples/python/agents/beginner/number_guessing_game",
+    "samples/python/agents/beginner/dice_agent_rest",
+    "samples/python/agents/beginner/dice_agent_grpc",
+    "samples/python/agents/beginner/a2a-mcp-without-framework",
+    "samples/python/agents/beginner/adk_facts",
+    "samples/python/agents/beginner/travel_planner_agent",
+    "samples/python/agents/beginner/birthday_planner_adk",
+
+    # Intermediate agents
+    "samples/python/agents/intermediate/langgraph",
+    "samples/python/agents/intermediate/crewai",
+    "samples/python/agents/intermediate/llama_index_file_chat",
+    "samples/python/agents/intermediate/adk_expense_reimbursement",
+    "samples/python/agents/intermediate/semantickernel",
+    "samples/python/agents/intermediate/marvin",
+    "samples/python/agents/intermediate/analytics",
+    "samples/python/agents/intermediate/veo_video_gen",
+    "samples/python/agents/intermediate/github-agent",
+    "samples/python/agents/intermediate/content_planner",
+    "samples/python/agents/intermediate/adk_cloud_run",
+
+    # Advanced agents
+    "samples/python/agents/advanced/ag2",
+    "samples/python/agents/advanced/any_agent_adversarial_multiagent",
+    "samples/python/agents/advanced/a2a_telemetry",
+    "samples/python/agents/advanced/a2a_mcp",
+    "samples/python/agents/advanced/airbnb_planner_multiagent",
+    "samples/python/agents/advanced/azureaifoundry_sdk",
+    "samples/python/agents/advanced/mindsdb",
+    "samples/python/agents/advanced/headless_agent_auth",
+
+    # Beginner hosts
+    "samples/python/hosts/beginner/cli",
+    "samples/python/hosts/beginner/beeai-chat",
+    "samples/python/hosts/beginner/multiagent",
+
+    # Intermediate hosts
+    "samples/python/hosts/intermediate/a2a_gui",
+
+    # Advanced hosts
+    "samples/python/hosts/advanced/a2a_multiagent_host",
+    "samples/python/hosts/advanced/content_creation",
+    "samples/python/hosts/advanced/weather_and_airbnb_planner",
+
+    # Extensions
     "samples/python/extensions/timestamp",
+
+    # Demo
     "demo/ui",
 ]
